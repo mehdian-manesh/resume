@@ -1,5 +1,5 @@
 :root{
-	--container-gap: 20mm;
+	--container-gap: 20%;
 	--color-dark: rgb(30,40,53);
 	--color-dark-invert: rgb(221, 122, 125);
 	--color-red: rgb(196,22,28);
@@ -7,11 +7,21 @@
 	--icon-padding: 7px;
 	--icon-text-margin: 12px;
 }
+@media (max-width: 500px) {
+	:root{
+		--container-gap: 0mm;
+	}
+}
+@media (min-width: 500px) and (max-width: 1000px) {
+	:root{
+		--container-gap: 10%;
+	}
+}
 body{
 	font-family: 'Vazirmatn';
 }
 .container{
-	padding: var(--container-gap);
+	padding: 0 var(--container-gap);
 }
 .header{
 	padding: 25px 40px;
@@ -24,6 +34,11 @@ body{
 	flex-wrap: wrap;
 	flex-direction: row-reverse;
 	justify-content: space-between;
+}
+@media (max-width: 700px) {
+	.header {
+		justify-content: space-around;
+	}
 }
 .header a {
 	color: #ffffff;
@@ -121,6 +136,14 @@ body{
 .item {
 	margin-top: 33px;
 }
+.title::before {
+	content: "◆";
+	display: inline-block;
+	font-size: 1.1em;
+	margin-bottom: -0.1em;
+	margin-inline-start: -2em;
+	margin-inline-end: 0.5em;
+}
 section.experience .item {
 	margin-bottom: 70px;
 }
@@ -153,6 +176,11 @@ section.experience .item {
 	margin-top: 30px;
 }
 
-section.skills > ul{
+section.skills ul{
 	direction: ltr;
+}
+
+section.skills li{
+	line-height: 2em;
+	font-size: large;
 }
