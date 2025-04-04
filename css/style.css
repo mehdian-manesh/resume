@@ -18,7 +18,7 @@
 	}
 }
 body{
-	font-family: 'Vazirmatn';
+	font-family: 'vazirmatn', sans-serif;
 }
 .container{
 	padding: 0 var(--container-gap);
